@@ -51,7 +51,7 @@ const WebsiteOverlay = styled.div`
 
   .website-title {
     color: var(--white);
-    font-weight: 700;
+    font-weight: 400;
     font-size: 2rem;
     position: absolute;
     left: 8px;
