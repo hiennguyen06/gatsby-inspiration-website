@@ -9,4 +9,5 @@ export const Container = styled.div`
   height: 100%;
   max-width: 1536px;
   margin: 0 auto;
+  padding: 0 1.6rem;
 `

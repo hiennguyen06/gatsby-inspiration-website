@@ -59,40 +59,6 @@ const createTagPages = async ({ graphql, actions }) => {
   // 4. pass tag data to website.js
 }
 
-const createWebsitePagination = async ({ graphql, actions }) => {
-  const { data } = await graphql(`
-    {
-      websites: allContentfulWebsite {
-        totalCount
-        nodes {
-          name
-          id
-          slug
-        }
-      }
-    }
-  `)
-  const pageSize = 6
-  const pageCount = Math.ceil(data.websites.totalCount / pageSize)
-
-  Array.from({ length: pageCount }).forEach((_, i) => {
-    console.log(`creating page ${i}`)
-    actions.createPage({
-      path: `/${i + 1}`,
-      component: path.resolve(`./src/pages/index.js`),
-      context: {
-        skip: i * pageSize,
-        currentPage: i + 1,
-        pageSize,
-      },
-    })
-  })
-}
-
 exports.createPages = async params => {
-  await Promise.all([
-    createWebsitePages(params),
-    createTagPages(params),
-    createWebsitePagination(params),
-  ])
+  await Promise.all([createWebsitePages(params), createTagPages(params)])
 }

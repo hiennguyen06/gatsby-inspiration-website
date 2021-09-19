@@ -1,16 +1,19 @@
-import React, { useState } from "react"
+import React from "react"
 import "normalize.css"
 import { createGlobalStyle } from "styled-components"
 
 import Header from "./Header"
-import InfoOverlay from "./InfoOverlay"
 import Footer from "./Footer"
 
 const GlobalStyle = createGlobalStyle`
     @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;700&display=swap');
 
     :root {
-      --green: #000;
+      --black: #000;
+      --white: #fff;
+      --red: #cf2d02;
+      --yellow: #edbb3a;
+      --grey: #f8f8f8;
     }
 
     * {
@@ -45,6 +48,7 @@ const GlobalStyle = createGlobalStyle`
         font-weight: 400;
         color: var(--green);
         font-size: 1.6rem;
+        line-height: 1.4;
         background: #fff;
     }
     h1,h2,h3,h4,h5,h6,p {
@@ -60,16 +64,10 @@ const GlobalStyle = createGlobalStyle`
     }
 `
 const Layout = ({ children }) => {
-  const [showInfo, setShowInfo] = useState(false)
-
-  const handleShowInfo = () => {
-    setShowInfo(!showInfo)
-  }
   return (
     <>
       <GlobalStyle />
-      <Header handleShowInfo={handleShowInfo} showInfo={showInfo} />
-      <InfoOverlay handleShowInfo={handleShowInfo} showInfo={showInfo} />
+      <Header />
       {children}
       <Footer />
     </>

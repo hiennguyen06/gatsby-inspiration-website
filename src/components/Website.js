@@ -30,23 +30,32 @@ const WebsiteOverlay = styled.div`
   right: 0;
   width: 100%;
   height: 100%;
-  background: rgba(48, 77, 70, 0.6);
   opacity: 0;
   transition: opacity 0.5s ease;
 
   &:hover {
     opacity: 1;
-    cursor: pointer;
+    cursor: auto;
     z-index: 9;
+    background: var(--black);
   }
 
   .icon-redirect {
-    font-size: 3.2rem;
+    font-size: 4rem;
     color: #fff;
     z-index: 10;
     position: absolute;
     right: 0rem;
     top: 0rem;
+  }
+
+  .website-title {
+    color: var(--white);
+    font-weight: 700;
+    font-size: 2rem;
+    position: absolute;
+    left: 8px;
+    bottom: 8px;
   }
 `
 
@@ -68,15 +77,11 @@ const Website = ({ website }) => {
             <a href={`${website.url}`} target="_blank" rel="noreferrer">
               <FiArrowUpRight className="icon-redirect" />
             </a>
+            <a href={`${website.url}`} target="_blank" rel="noreferrer">
+              <span className="website-title">{website.name}</span>
+            </a>
           </WebsiteOverlay>
         </div>
-
-        <a href={`${website.url}`} target="_blank" rel="noreferrer">
-          <h2 className="project-title">
-            {website.name}
-            <span>{website.createdAt}</span>
-          </h2>
-        </a>
       </WebsiteStyles>
     </>
   )

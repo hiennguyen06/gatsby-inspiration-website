@@ -2,7 +2,7 @@ import React from "react"
 import styled from "styled-components"
 
 const FooterStyles = styled.div`
-  padding: 1.6rem;
+  padding: 0 1.6rem 1.6rem 1.6rem;
   text-align: center;
 
   @media (max-width: 400px) {
