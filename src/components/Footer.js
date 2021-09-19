@@ -5,9 +5,9 @@ const FooterStyles = styled.div`
   padding: 0 1.6rem 1.6rem 1.6rem;
   text-align: center;
 
-  @media (max-width: 400px) {
+  @media (max-width: 600px) {
     text-align: center;
-    font-size: 1.4rem;
+    font-size: 1.2rem;
   }
 `
 
