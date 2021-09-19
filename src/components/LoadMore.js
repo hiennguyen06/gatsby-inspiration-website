@@ -2,7 +2,7 @@ import React from "react"
 import styled from "styled-components"
 
 const LoadMoreStyles = styled.div`
-  padding: 3.2rem 0;
+  padding: 1.6rem 0;
   text-align: center;
 `
 
