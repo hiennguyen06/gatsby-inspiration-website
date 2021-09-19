@@ -13,6 +13,9 @@ const HeaderInner = styled.div`
     p {
       font-size: 1.6rem;
       text-align: center;
+      @media (max-width: 600px) {
+        font-size: 1.2rem;
+      }
     }
     a {
       border-bottom: 1px solid var(--white);
